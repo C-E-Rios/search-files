@@ -1,7 +1,8 @@
 class SearchListContoller {
 
-    constructor (AppService) {
+    constructor ($state, AppService) {
         'ngInject';
+        this.$state = $state;
         this.AppService = AppService;
     }
 
@@ -15,6 +16,10 @@ class SearchListContoller {
                 this.searches = data;
                 return this.searches;
             });
+    }
+
+    goToScanList (index) {
+        this.$state.go('scanList', {scanId: index});
     }
 
 }

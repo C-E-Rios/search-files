@@ -11,6 +11,12 @@ class AppService {
             .catch(failed);
     }
 
+    getScanList (scanId) {
+        return this.$http.get(`http://c7webtest.azurewebsites.net/searches/${scanId}/results`)
+            .then(complete)
+            .catch(failed);
+    }    
+
 }
 
 export default AppService;

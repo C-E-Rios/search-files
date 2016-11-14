@@ -32,6 +32,10 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
+                test: /\.scss$/,
+                loader: 'style!css?sourceMap!sass?sourceMap'
+            },
+            {
                 test: /\.css$/,
                 loader: 'style!css'
             },
