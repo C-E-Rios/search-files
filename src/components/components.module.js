@@ -1,6 +1,6 @@
 import angular from 'angular';
 import SearchList from './searchList/searchList.module';
-import ScanList from './ScanList/ScanList.module';
+import ScanList from './scanList/scanList.module';
 
 let componentModule = angular.module('app.components', [
     SearchList,

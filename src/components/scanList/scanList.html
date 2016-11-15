@@ -1,39 +1,39 @@
 <div layout="row" layout-fill>
 
-    <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+    <md-sidenav class="site-sidenav md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
 
         <md-content flex layout-margin>
 
             <div layout="column" class="clear-filters">
-                <md-button class="md-raised md-accent" ng-click="$ctrl.clearFilters()" ng-disabled="$ctrl.disableFilterButton($ctrl.filter)" flex>Clear Filters</md-button>
+                <md-button class="md-raised md-accent" ng-click="$ctrl.clearFilters()" ng-disabled="$ctrl.disableFilterButton($ctrl.filter)">Clear Filters</md-button>
             </div>
 
-            <md-input-container class="md-block" flex-gt-sm>
+            <md-input-container class="md-block">
                 <label>Path</label>
-                <input type="text" ng-model="$ctrl.filter.path" ng-change="$ctrl.onSelect($ctrl.filter)">
+                <input type="text" ng-model="$ctrl.filter.path">
             </md-input-container>
 
-            <md-input-container class="md-block" flex-gt-sm>
+            <md-input-container class="md-block">
                 <label>Min-size</label>
-                <input type="number" ng-model="$ctrl.filter.minSize" ng-change="$ctrl.onSelect($ctrl.filter)">
+                <input type="number" ng-model="$ctrl.filter.minSize">
             </md-input-container>
 
-            <md-input-container class="md-block" flex-gt-sm>
+            <md-input-container class="md-block">
                 <label>Max-size</label>
-                <input type="number" ng-model="$ctrl.filter.maxSize" ng-change="$ctrl.onSelect($ctrl.filter)">
+                <input type="number" ng-model="$ctrl.filter.maxSize">
             </md-input-container>
 
             <h4 layout-padding>Created between:</h4>
-            <md-datepicker ng-model="$ctrl.filter.createdFrom" md-placeholder="01/01/2000" ng-change="$ctrl.onSelect($ctrl.filter)"></md-datepicker>
-            <md-datepicker ng-model="$ctrl.filter.createdTo" md-placeholder="31/12/2015" ng-change="$ctrl.onSelect($ctrl.filter)"></md-datepicker>
+            <md-datepicker ng-model="$ctrl.filter.createdFrom" md-placeholder="01/01/2000"></md-datepicker>
+            <md-datepicker ng-model="$ctrl.filter.createdTo" md-placeholder="31/12/2015"></md-datepicker>
 
             <h4 layout-padding>Last Accessed between:</h4>
-            <md-datepicker ng-model="$ctrl.filter.AccessedFrom" md-placeholder="01/01/2000" ng-change="$ctrl.onSelect($ctrl.filter)"></md-datepicker>
-            <md-datepicker ng-model="$ctrl.filter.AccessedTo" md-placeholder="31/12/2015" ng-change="$ctrl.onSelect($ctrl.filter)"></md-datepicker>
+            <md-datepicker ng-model="$ctrl.filter.AccessedFrom" md-placeholder="01/01/2000"></md-datepicker>
+            <md-datepicker ng-model="$ctrl.filter.AccessedTo" md-placeholder="31/12/2015"></md-datepicker>
 
             <h4 layout-padding>Last Modified between:</h4>
-            <md-datepicker ng-model="$ctrl.filter.modifiedFrom" md-placeholder="01/01/2000" ng-change="$ctrl.onSelect($ctrl.filter)"></md-datepicker>
-            <md-datepicker ng-model="$ctrl.filter.modifiedTo" md-placeholder="31/12/2015" ng-change="$ctrl.onSelect($ctrl.filter)"></md-datepicker>
+            <md-datepicker ng-model="$ctrl.filter.modifiedFrom" md-placeholder="01/01/2000"></md-datepicker>
+            <md-datepicker ng-model="$ctrl.filter.modifiedTo" md-placeholder="31/12/2015"></md-datepicker>
 
         </md-content>
 
@@ -43,9 +43,9 @@
 
     </md-sidenav>
 
-    <div layout="column" tab-index="-1" role="main" flex>
+    <div layout="column" flex>
 
-        <md-toolbar class="md-whiteframe-glow-z1 site-content-toolbar" hide-gt-sm>
+        <md-toolbar hide-gt-sm>
             <md-button class="md-icon-button" ng-click="$ctrl.toggleMenu()" aria-label="toggle menu">
                 <ng-md-icon icon="menu"></ng-md-icon>
             </md-button>
@@ -57,8 +57,8 @@
 
         <md-content flex layout-padding="" ng-if="$ctrl.items">
 
-            <div flex class="md-padding" layout-xs="column" layout="row" layout-align="center">
-                <div layout="column" flex="80" flex-xs="100" flex-lg="60">
+            <div class="md-padding" layout="row" layout-align="center">
+                <div flex="80" flex-xs="100" flex-lg="60">
 
                     <md-card dir-paginate="scan in $ctrl.items | filter:{Path:$ctrl.filter.path} | maxSize:$ctrl.filter.maxSize | minSize:$ctrl.filter.minSize | createdFrom:$ctrl.filter.createdFrom | createdTo:$ctrl.filter.createdTo | itemsPerPage: 10" current-page="$ctrl.currentPage">
                         <md-card-header>
