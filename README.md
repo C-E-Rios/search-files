@@ -19,7 +19,9 @@ Tools needed to run this app:
 * `npm start` to run application on localhost:8888
 
 ##Todos
-* Server side filter/sort/paginate - 300k+ items are a lot for the client
+* Paginate on sever for list of 100k items plus
+* Server side filter/sort - 300k+ items are a lot for the client
 * Consider functionality and performance across other browsers (only tested on Chrome)
 * Unit tests
 * Consider splitting up sections within the scanList component into their own components
+* Allow users to toggle between list and grid views for search and scan lists.

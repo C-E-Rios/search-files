@@ -26,18 +26,17 @@ class ScanListContoller {
         this.filter = null;
     }
 
-    onSelect (filter) {
-        for (let key of Object.keys(filter)) {
-            if (!filter[key]) {
-                this.filter = _.omit(filter, key);
-            }
+    disableFilterButton (filter) {
+        if (!filter) {
+            return true;
         }
-        if (!Object.keys(this.filter).length) {
-            this.clearFilters();
-        }
+        return Object.keys(filter)
+            .every((prop) => {
+                return filter[prop] === '' || filter[prop] === null;
+            });
     }
 
-    openMenu () {
+    toggleMenu () {
         this.$timeout(() => this.$mdSidenav('left').open());
     }
 

@@ -2,7 +2,7 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import scanListComponent from './scanList.component';
 
-let scanModule = angular.module('scan', [
+let scanListModule = angular.module('scanList', [
     uiRouter
 ])
 
@@ -20,4 +20,4 @@ let scanModule = angular.module('scan', [
 
 .name;
 
-export default scanModule;
+export default scanListModule;

@@ -15,7 +15,13 @@ class AppService {
         return this.$http.get(`http://c7webtest.azurewebsites.net/searches/${scanId}/results`)
             .then(complete)
             .catch(failed);
-    }    
+    }
+
+    getScanListPage (scanId, offset, limit) {
+        return this.$http.get(`http://c7webtest.azurewebsites.net/searches/${scanId}/results?start=${offset}&size=${limit}`)
+            .then(complete)
+            .catch(failed);
+    }
 
 }
 
