@@ -8,6 +8,12 @@ class AppService {
     getSearchList() {
         return this.$http.get('http://c7webtest.azurewebsites.net/searches/')
             .then(complete)
+            .then((data) => {
+                return data.map((item, index) => {
+                    item.id = index;
+                    return item;
+                });
+            })
             .catch(failed);
     }
 

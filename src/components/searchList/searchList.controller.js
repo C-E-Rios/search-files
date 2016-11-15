@@ -18,8 +18,8 @@ class SearchListContoller {
             });
     }
 
-    goToScanList (index) {
-        this.$state.go('scanList', {scanId: index});
+    goToScanList (id) {
+        this.$state.go('scanList', {scanId: id});
     }
 
 }
