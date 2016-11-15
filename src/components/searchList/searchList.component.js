@@ -1,7 +1,7 @@
 import template from './searchList.html';
 import controller from './searchList.controller';
 
-import './searchList.scss';
+import './searchList.css';
 
 let searchListComponent = {
     template,

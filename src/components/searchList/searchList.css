@@ -1,0 +1,37 @@
+md-sidenav.site-sidenav md-content {
+    overflow: hidden;
+}
+
+.clear-filters {
+    margin-bottom: 30px;
+}
+
+ul.pagination {
+
+    margin: 0;
+    padding: 10px 0;
+
+    background: #ccc;
+    text-align: center;
+}
+
+ul.pagination li {
+    display: inline-block;
+    padding: 5px;
+}
+
+ul.pagination li a {
+    text-decoration: none;
+    color: #000;
+}
+
+ul.pagination li a:hover {
+    color: #999;
+}
+
+ul.pagination li.active a {
+    background: #c51162;
+    color: #fff;
+    border-radius: 50%;
+    padding: 4px;
+}
